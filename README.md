@@ -1,15 +1,15 @@
 # **Algoritmos : INF135**
 ## **Algoritmos de planificacion de procesos**
-- [ ] 1. FIFO First Input First Output
-- [ ] 2. PR Priotity
-- [ ] 3. SJN Shortest Job Next Time (No Expropiativo)
-- [ ] 5. SRT Shortest Remaining time First (Expropiativo)
-- [ ] 7. FB Q = n FeedBack
+- [x] 1. FIFO First Input First Output
+- [x] 2. PR Priotity
+- [x] 3. SJN Shortest Job Next Time (No Expropiativo)
+- [x] 5. SRT Shortest Remaining time First (Expropiativo)
+- [?] 7. FB Q = n FeedBack
 ## **Concurrencia - Exclusión Mútua (soluciones por software)**
 - [ ] 8. Peterson, Dekker
 
 ## **Planificación de procesos multiprogramada con FIFO (Contigua y no contigua)**
-- [ ] 9. FIFO (Contigua y no contigua)s
+- [?] 9. FIFO (Contigua y no contigua)s
 ## **Algoritmo de reemplazo de pagina**
 - [ ] 11. Politica FIFO First Input First Output
 ## **Algoritmo de reemplazo página virtual**

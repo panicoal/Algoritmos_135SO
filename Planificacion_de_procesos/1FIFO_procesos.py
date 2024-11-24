@@ -7,42 +7,57 @@ class proceso:
         self.fin = 0
         self.t = 0
         self.e = 0
+        self.p = 0
+        self.i = 0
 
-    def calcular_tiempos(self, tiempo_actual):
+    def calcular(self, tiempo_actual):
         self.ini = max(self.ll, tiempo_actual)
         self.fin = self.ini + self.cpu
         self.t = self.fin - self.ll
         self.e = self.t - self.cpu
+        self.p = round(self.t / self.cpu,2)
+        self.i = round(self.cpu / self.t,2)
         return self.fin
 
     def mostrar(self):
-        print(f"{self.id} \t {self.ll} \t {self.cpu} \t {self.ini} \t {self.fin} \t {self.t} \t {self.e}")
+        print(f"{self.id} \t {self.ll} \t {self.cpu} \t {self.ini} \t {self.fin} \t {self.t} \t {self.e} \t {self.p} \t {self.i}")
 
-
+#Main
 num = int(input("#Procesos : "))
 cola = []
-
 for i in range(num):
-    print(f'Proceso {i}')
-    tll, tcpu = map(int, input("tll tcpu\n").split())
-    cola.append(proceso(i, tll, tcpu))
-    print("\n")
+    print(f'Proceso {i+1}')
+    tll, tcpu = map(int, input().split())
+    cola.append(proceso(i+1, tll, tcpu))
 
-# Ordenar la lista por tiempo de llegada (FIFO)
 cola.sort(key=lambda p: p.ll)
 
-# Calcular tiempos
 tiempo_actual = 0
-promedio_ttotal = 0
-promedio_tespera = 0
 
-print("id \t tll \t tcpu \t ini \t fin \t t \t e")
+prom_ttotal = 0
+prom_tespera = 0
+prom_ppena = 0
+prom_pres = 0
+
+print("P \t Tll \t Tcpu \t ini \t fin \t T \t E \t P \t I")
 for proceso in cola:
-    tiempo_actual = proceso.calcular_tiempos(tiempo_actual)
+    tiempo_actual = proceso.calcular(tiempo_actual)
     proceso.mostrar()
-    promedio_ttotal += proceso.t
-    promedio_tespera += proceso.e
+    prom_ttotal += proceso.t
+    prom_tespera += proceso.e
+    prom_ppena += proceso.p
+    prom_pres += proceso.i
 
-# Mostrar promedios
-print(f"Promedio_ttotal: {promedio_ttotal / num:.2f}")
-print(f"Promedio_tespera: {promedio_tespera / num:.2f}")
+print(f"Promedio_ttotal: {prom_ttotal / num:.2f}")
+print(f"Promedio_tespera: {prom_tespera / num:.2f}")
+print(f"Promedio_tespera: {prom_ppena / num:.2f}")
+print(f"Promedio_tespera: {prom_pres / num:.2f}")
+
+
+'''
+3
+0 3
+2 4
+1 2
+
+'''
