@@ -39,7 +39,7 @@ prom_tespera = 0
 prom_ppena = 0
 prom_pres = 0
 
-print("P \t Tll \t Tcpu \t ini \t fin \t T \t E \t P \t I")
+print("\nP \t Tll \t Tcpu \t ini \t fin \t T \t E \t P \t I")
 for proceso in cola:
     tiempo_actual = proceso.calcular(tiempo_actual)
     proceso.mostrar()
@@ -52,7 +52,6 @@ print(f"Promedio_ttotal: {prom_ttotal / num:.2f}")
 print(f"Promedio_tespera: {prom_tespera / num:.2f}")
 print(f"Promedio_tespera: {prom_ppena / num:.2f}")
 print(f"Promedio_tespera: {prom_pres / num:.2f}")
-
 
 '''
 3
